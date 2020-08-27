@@ -22,9 +22,11 @@ Step 3: Now you can ```import cbapi as cp``` in your own pthon file.
   
 Call the function in the package by:  
 ```  
-data = cp.get_data(settings, method)  
+data = cp.get_data(key, settings, method)  
 ```  
   
+The **key** should be your RapidApi key.  
+
 The **settings** should be a dictionary with following inputs:  
 1) "object": "organizations" or "people". This is the data you want to retrieve.  
 2) "sort_order_setted": "DESC" or "ASC". This is the order in which you want to get your data.  
@@ -37,6 +39,7 @@ If "generator", you will get the data one page at a time.
 
 An example of inputs would be:  
 ```
+key = "<Your Rapid Api Key entered here>"  # remember to inplace with your own key
 settings = {"object":"organizations","sort_order_setted":"ASC","items_per_page_setted":80 }
 method = "generator"
 ```  
